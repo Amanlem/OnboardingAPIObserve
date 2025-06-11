@@ -7,9 +7,6 @@ A full-stack asset ingestion dashboard built with:
 ✅ Interactive charts with Chart.js
 ✅ Modular structure: easy to deploy and extend
 
-📸 Preview
-(Insert screenshot if you have one! Example:)
-
 ✨ Features
 Real-time asset ingestion flow simulation
 
