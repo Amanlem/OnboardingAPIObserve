@@ -48,7 +48,7 @@ Make sure these are not committed:
 __pycache__/
 *.sqlite
 
-⚙️ Running Locally
+## ⚙️ Running Locally
 Backend (FastAPI)
 bash
 Copy
@@ -93,9 +93,7 @@ Persistent asset tracking
 
 Real-time dashboard with metrics & charts
 
-Deployment
-🚀 Terraform-ready structure → coming soon!
-The project is structured to support cloud deployment — stay tuned for full IaC (Infrastructure as Code) setup.
+The project is structured to support cloud deployment — stay tuned for full upgrade in setup.
 
 Credits
 Built by Amanuel Lemma Dessalegn — feel free to ⭐️ or fork!
