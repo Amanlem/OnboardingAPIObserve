@@ -7,43 +7,47 @@ A full-stack asset ingestion dashboard built with:
 ✅ Interactive charts with Chart.js
 ✅ Modular structure: easy to deploy and extend
 
-✨ Features
-Real-time asset ingestion flow simulation
+## ⚙️ Quick Start
 
-/ingest, /assets, /chart-data, /webhook endpoints
+### 🖥️ Local Setup
+1. Clone the repo
+2. Copy config file:
+```bash
+cp config.local.json config.json
+Run frontend and backend
 
-Retry logic & webhook delivery
+☁️ Terraform Deployment
+Copy Terraform vars:
 
-Chart visualizations of success, retry rate, schema errors
-
-Persistent database (SQLite + aiosqlite)
-
-Modern UI built with React and TailwindCSS
-
-Modular project structure (backend & frontend separated)
-
-Deployment-ready (Terraform config in progress 🚀)
-
-🗂️ Project Structure
-arduino
+bash
 Copy
 Edit
-API INGESTION DASHBOARD/
-├── backend/
-│   ├── main.py
-│   ├── db.py
-│   ├── data.db
-│   ├── seed.py
-│   ├── requirements.txt
-│   ├── processed_ids.json
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   ├── tailwind.config.js
-│   ├── postcss.config.js
-├── .gitignore
-├── README.md
+cp terraform.tfvars.example terraform.tfvars
+Edit values to match your AWS setup
+
+Run Terraform:
+
+bash
+Copy
+Edit
+terraform init
+terraform apply
+yaml
+Copy
+Edit
+
+---
+
+### ✅ Bonus: Add `.gitignore`
+Make sure these are not committed:
+
+```gitignore
+.env
+*.tfvars
+*.pem
+__pycache__/
+*.sqlite
+
 ⚙️ Running Locally
 Backend (FastAPI)
 bash
