@@ -1,97 +1,107 @@
-🚀 Asset Ingestion Dashboard
-A full-stack asset ingestion dashboard built with:
+# 🚀 Asset Ingestion Dashboard
 
-✅ FastAPI backend + retry & webhook logic
-✅ React + TailwindCSS frontend
-✅ SQLite database for persistence
-✅ Interactive charts with Chart.js
-✅ Modular structure: easy to deploy and extend
+This project simulates an **async asset ingestion system** — visualizing webhook delivery, retry logic, and ingestion health in real-time. 
 
-✨ Features
-Real-time asset ingestion flow simulation
+Originally a weekend prototype, it now includes:
 
-/ingest, /assets, /chart-data, /webhook endpoints
+- FastAPI backend with retry + webhook logic
+- React + Tailwind frontend with Chart.js
+- SQLite persistence
+- Modular, cloud-deployable setup with Terraform + Bash automation
 
-Retry logic & webhook delivery
+> Ideal for API onboarding, data ingestion, or delivery infrastructure teams who need quick visibility — without full observability tools.
 
-Chart visualizations of success, retry rate, schema errors
+---
 
-Persistent database (SQLite + aiosqlite)
+## 🧪 Local Setup
 
-Modern UI built with React and TailwindCSS
+### 1. Clone and prepare configs
+```bash
+git clone https://github.com/Amanlem/OnboardingAPIObserve.git
+cd OnboardingAPIObserve
 
-Modular project structure (backend & frontend separated)
-
-Deployment-ready (Terraform config in progress 🚀)
-
-🗂️ Project Structure
-arduino
-Copy
-Edit
-API INGESTION DASHBOARD/
-├── backend/
-│   ├── main.py
-│   ├── db.py
-│   ├── data.db
-│   ├── seed.py
-│   ├── requirements.txt
-│   ├── processed_ids.json
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   ├── tailwind.config.js
-│   ├── postcss.config.js
-├── .gitignore
-├── README.md
-⚙️ Running Locally
-Backend (FastAPI)
+# (optional) For local config if needed:
+cp config.local.json config.json
+2. Run the backend (FastAPI)
 bash
 Copy
 Edit
 cd backend
 python -m venv venv
-venv\Scripts\activate    # Windows
-# source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate       # or source venv/bin/activate for macOS/Linux
 
 pip install -r requirements.txt
-
 uvicorn main:app --reload
-Runs at → http://127.0.0.1:8000
-
-Frontend (React + Tailwind)
+# → http://127.0.0.1:8000
+3. Run the frontend (React + Tailwind)
 bash
 Copy
 Edit
 cd frontend
 npm install
-npm start
-Runs at → http://localhost:3000
+npm run start
+# → http://localhost:3000
+☁️ Terraform Deployment (Optional)
+You can deploy the backend on AWS using the Terraform scripts provided.
 
-Why this API?
-This project simulates an Asset Ingestion Pipeline, a common pattern in:
+1. Create your vars file:
+bash
+Copy
+Edit
+cp terraform/terraform.tfvars.example terraform/terraform.tfvars
+Then edit the new file with your values:
 
-Media processing pipelines (video/audio ingestion)
+hcl
+Copy
+Edit
+aws_region      = "us-east-1"
+key_name        = "your-ec2-key-name"
+instance_type   = "t2.micro"
+bucket_name     = "your-s3-bucket-name"
+dynamodb_table  = "your-lock-table-name"
+2. Deploy with Terraform:
+bash
+Copy
+Edit
+cd terraform
+terraform init
+terraform apply
+📂 Project Structure
+bash
+Copy
+Edit
+OnboardingAPIObserve/
+│
+├── backend/          # FastAPI app, SQLite, webhook logic
+├── frontend/         # React UI + Chart.js + Tailwind
+├── terraform/        # EC2 + S3 + ELB + AutoScaling setup
+├── deploy.sh         # Optional Bash automation
+├── README.md
+└── .gitignore
+🔐 .gitignore
+Ensure sensitive files are ignored:
 
-Machine Learning pipelines
+gitignore
+Copy
+Edit
+.env
+*.tfvars
+*.pem
+*.sqlite
+__pycache__/
+💡 Why This Exists
+This project models patterns found in:
 
-ETL systems
+Media/video processing platforms
 
-Data streaming dashboards
+ML data pipelines
 
-Product ingestion + monitoring
+ETL ingestion systems
 
-It provides a full-stack example of:
+SaaS product onboarding metrics
 
-Backend REST API with retry logic
+The goal: Visibility for delivery teams without needing full observability tooling.
 
-Persistent asset tracking
-
-Real-time dashboard with metrics & charts
-
-Deployment
-🚀 Terraform-ready structure → coming soon!
-The project is structured to support cloud deployment — stay tuned for full IaC (Infrastructure as Code) setup.
-
-Credits
-Built by Amanuel Lemma Dessalegn — feel free to ⭐️ or fork!
+🙌 Credits
+Built by Amanuel Lemma Dessalegn
+Feel free to ⭐️ or fork — feedback welcome!
