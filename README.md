@@ -102,6 +102,16 @@ SaaS product onboarding metrics
 
 The goal: Visibility for delivery teams without needing full observability tooling.
 
+
 🙌 Credits
 Built by Amanuel Lemma Dessalegn
 Feel free to ⭐️ or fork — feedback welcome!
+=======
+Persistent asset tracking
+
+Real-time dashboard with metrics & charts
+
+The project is structured to support cloud deployment — stay tuned for full upgrade in setup.
+
+Credits
+Built by Amanuel Lemma Dessalegn — feel free to ⭐️ or fork!
